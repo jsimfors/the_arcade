@@ -1,17 +1,39 @@
 #include <iostream>
 using namespace std;
 
-char square[10] = {'o','a','b','c','d','e','f','g','h','i'};
+char square[10] = {'o','1','2','3','4','5','6','7','8','9'};
 
 int checkwin();
 void board();
+void gamePlay();
 
 int main(){
     board();
+    gamePlay();
 }
 
 int checkwin(){ 
+    // TODO create function that finds winner.
     return 0;
+}
+
+void gamePlay(){
+    int choice;
+    int player = 1; // TODO: add more players.
+    char mark;
+    cout << "Player " << player << ", choose your box" << endl;
+    cin >> choice;
+    cout << "You chose " << choice << endl;
+    mark=(player == 1) ? 'X' : 'O';
+
+    if (square[1] == '1')
+        square[1] = mark;
+    else
+    {
+        cout<<"Invalid move ";
+    }
+    board();
+
 }
 
 void board(){
