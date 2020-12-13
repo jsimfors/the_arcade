@@ -15,21 +15,23 @@ int main(){
     char mark;
 
     while(result()=='n'){
-    // change to next players turn
     player=='O'?player='X':player='O';
 
     cout << "Player " << player << ", make your move by choosing one of the available numbers." << endl;
     cin >> choice;
-    //mark=(player == 1) ? 'X' : 'O';
 
-    if (isdigit(square[choice])){
+    if(isdigit(square[choice])){
         square[choice] = player;
     }else{
         cout << "Invalid move ";
+    player=='O'?player='X':player='O';
+            cin.ignore();
+            cin.get();
     }
 
     board();
     }
+    
     result()!='d'?cout << "Congrats Player " << result() << ", you win" << endl: cout << "It's a draw!" << endl;
 
 }
