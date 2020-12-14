@@ -9,7 +9,7 @@
                 "-std=c++17",
                 "-stdlib=libc++",
                 "-g",
-                "${file}",
+                "${workspaceFolder}/*.cpp", 
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],
@@ -27,7 +27,7 @@
             "command": "/usr/bin/clang++",
             "args": [
                 "-g",
-                "${file}",
+                "${workspaceFolder}/*.cpp", 
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],

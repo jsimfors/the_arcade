@@ -1,4 +1,6 @@
 #include <iostream>
+#include "games.hpp"
+
 using namespace std;
 
 char square[10] = {'o','1','2','3','4','5','6','7','8','9'};
@@ -6,7 +8,7 @@ char square[10] = {'o','1','2','3','4','5','6','7','8','9'};
 char result();
 void board();
 
-int main(){
+void tictactoe(){
     // Start by printing board
     board();
 
@@ -22,18 +24,18 @@ int main(){
 
     if(isdigit(square[choice])){
         square[choice] = player;
-    }else{
-        cout << "Invalid move ";
-    player=='O'?player='X':player='O';
-            cin.ignore();
-            cin.get();
     }
+    // else{
+    //     cout << "Invalid move ";
+    // player=='O'?player='X':player='O';
+    //         cin.ignore();
+    //         cin.get();
+    // }
 
     board();
     }
     
     result()!='d'?cout << "Congrats Player " << result() << ", you win" << endl: cout << "It's a draw!" << endl;
-
 }
 
 char result(){ 
