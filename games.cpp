@@ -94,3 +94,55 @@ void board(){
 
     cout << "|_____|_____|_____|" << endl << endl;
 }
+
+void rockPaperScissors() {
+
+    int cC = rand() % 3 + 1;
+    int uC;
+    string rock = "\U0001F91B Rock";
+    string paper = "\U0001F91A Paper";
+    string scissors = "\U0001F91E Scissors";
+    cout << "~*~ \U0001F91B Rock \U0001F91A Paper \U0001F91E Scissors ~*~" << endl;
+    cout << "Choose your weapon:" << endl;
+    cout << "1)" << rock << endl << "2) " << paper << endl << "3) " << scissors << endl;
+    cin >> uC;
+    
+    cout << "\nYou chose ";
+    if(uC==1){
+        cout << rock << endl;
+    }else if(uC==2){
+        cout << paper << endl;
+    }else if(uC==3){
+        cout << scissors << endl;
+    }else{
+        cout << "an invalid option" << endl;
+    }
+
+    cout << "Computer chose ";
+    if(cC==1){
+        cout << rock << endl;
+    }else if(cC==2){
+        cout << paper << endl;
+    }else{
+        cout << scissors << endl;
+    }
+    
+    if(uC==cC){
+        cout << "It's a draw!" << endl;
+    }else if(uC>cC){
+        if(cC==1 && uC==3){
+            cout << "Computer wins." << endl;
+        }else{
+            cout << "You win." << endl;
+        }
+    }else if(uC<cC){
+        if(uC==1 && cC==3){
+            cout << "You win." << endl;
+        }else{
+            cout << "Computer wins." << endl;
+        }
+    }else{
+        cout << "Computer wins." << endl;
+    }
+    
+}

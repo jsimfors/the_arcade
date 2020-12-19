@@ -1,1 +1,2 @@
 void tictactoe();
+void rockPaperScissors();
