@@ -9,9 +9,7 @@ char result();
 void board();
 
 void tictactoe(){
-    // Start by printing board
     board();
-
     char player = 'O';
     int choice;
     char mark;
@@ -25,12 +23,6 @@ void tictactoe(){
     if(isdigit(square[choice])){
         square[choice] = player;
     }
-    // else{
-    //     cout << "Invalid move ";
-    // player=='O'?player='X':player='O';
-    //         cin.ignore();
-    //         cin.get();
-    // }
 
     board();
     }
@@ -96,7 +88,7 @@ void board(){
 }
 
 void rockPaperScissors() {
-
+    srand (time (NULL));
     int cC = rand() % 3 + 1;
     int uC;
     string rock = "\U0001F91B Rock";
@@ -145,4 +137,26 @@ void rockPaperScissors() {
         cout << "Computer wins." << endl;
     }
     
+}
+
+void guessMyNumber() {
+    srand (time (NULL));
+	int guessMe = rand() % 100 + 1;
+    cout << "\n" << "~*~ Guess My Number ~*~" << endl;
+    bool isCorrect = false;
+
+	int currentgGuess, totalGuesses = 0;
+    while(!isCorrect){
+        cout << "Enter a guess between 1 and 100 : ";
+		cin >> currentgGuess;
+		totalGuesses++;
+        if (currentgGuess > guessMe)
+			cout << "Too high" << endl;
+		else if (currentgGuess < guessMe)
+			cout << "Too low" << endl;
+		else{
+			cout << "That's right! It only took you " << totalGuesses << " guesses. Cool beans!" << endl;
+            isCorrect = true;
+        }
+    }
 }
